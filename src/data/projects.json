@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "The Autonomous Researcher",
-    "description": "An AI agent that autonomously browses the web, synthesizes information, and produces structured research reports. Powered by Llama-3 via Ollama with a multi-step planning pipeline.",
-    "tags": ["Llama-3", "Ollama", "LangChain", "Python"],
-    "status": "Live",
-    "github": "https://github.com/yashasviudayan-py/autonomous-researcher",
+    "title": "The Orchestrator",
+    "description": "A natural language interface to control and orchestrate multiple AI agents from a single terminal. Think tmux meets AI — dispatch tasks, monitor pipelines, and collect results.",
+    "tags": ["Multi-Agent", "CLI", "Ollama", "Python"],
+    "status": "In Progress",
+    "github": "https://github.com/yashasviudayan-py/the-orchestrator",
     "demo": null
   },
   {
@@ -28,11 +28,11 @@
   },
   {
     "id": 4,
-    "title": "The Orchestrator",
-    "description": "A natural language interface to control and orchestrate multiple AI agents from a single terminal. Think tmux meets AI — dispatch tasks, monitor pipelines, and collect results.",
-    "tags": ["Multi-Agent", "CLI", "Ollama", "Python"],
-    "status": "In Progress",
-    "github": "https://github.com/yashasviudayan-py/the-orchestrator",
+    "title": "The Autonomous Researcher",
+    "description": "An AI agent that autonomously browses the web, synthesizes information, and produces structured research reports. Powered by Llama-3 via Ollama with a multi-step planning pipeline.",
+    "tags": ["Llama-3", "Ollama", "LangChain", "Python"],
+    "status": "Live",
+    "github": "https://github.com/yashasviudayan-py/autonomous-researcher",
     "demo": null
   }
 ]

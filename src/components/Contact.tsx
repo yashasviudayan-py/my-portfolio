@@ -1,15 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree form ID
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdalylbl';
 
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [useFormspree] = useState(false); // Set to true and add your Formspree ID to use Formspree
+  const [useFormspree] = useState(true);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = useCallback(() => {
+    navigator.clipboard.writeText('yashasviudayan@gmail.com').then(() => {
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    });
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -163,7 +171,7 @@ export default function Contact() {
           </a>
           <span className="text-white/10">·</span>
           <a
-            href="https://linkedin.com/in/yashasviudayan"
+            href="https://www.linkedin.com/in/yashasvi-udayan/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
@@ -175,16 +183,21 @@ export default function Contact() {
             LinkedIn
           </a>
           <span className="text-white/10">·</span>
-          <a
-            href="mailto:yashasviudayan@gmail.com"
-            className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
-            aria-label="Send email"
+          <button
+            onClick={copyEmail}
+            className="relative flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200 focus:outline-none"
+            aria-label="Copy email address"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            Email
-          </a>
+            {emailCopied ? 'Copied!' : 'Email'}
+            {emailCopied && (
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-white text-black font-medium px-2 py-1 rounded-md whitespace-nowrap pointer-events-none">
+                yashasviudayan@gmail.com
+              </span>
+            )}
+          </button>
         </motion.div>
       </div>
     </section>

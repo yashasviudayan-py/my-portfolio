@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "@/components/ScrollProgress";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yashasvi Udayan",
+  url: "https://my-portfolio-yashasviudayan-py.vercel.app",
+  jobTitle: "AI Systems Architect",
+  email: "yashasviudayan@gmail.com",
+  sameAs: [
+    "https://www.linkedin.com/in/yashasvi-udayan/",
+    "https://github.com/yashasviudayan-py",
+    "https://x.com/iamyashholiic",
+  ],
+};
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,20 +30,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yashasviudayan.vercel.app"),
+  metadataBase: new URL("https://my-portfolio-yashasviudayan-py.vercel.app"),
   title: {
-    default: "Yashasvi Udayan — AI Engineer",
+    default: "Yashasvi Udayan — AI Systems Architect",
     template: "%s | Yashasvi Udayan",
   },
   description:
-    "AI Engineer building autonomous systems, local LLM pipelines, and developer tools. Specializing in multi-agent architectures with Llama-3 on Apple Silicon.",
+    "AI Systems Architect building production-grade intelligent systems — from cloud LLM pipelines to autonomous agents and developer tooling.",
   keywords: [
+    "AI Systems Architect",
     "AI Engineer",
     "LLM",
-    "Ollama",
-    "Llama-3",
     "Multi-agent AI",
-    "Local AI",
+    "OpenAI",
+    "Anthropic",
     "Next.js",
     "TypeScript",
     "Python",
@@ -39,25 +54,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yashasviudayan.vercel.app",
+    url: "https://my-portfolio-yashasviudayan-py.vercel.app",
     siteName: "Yashasvi Udayan",
-    title: "Yashasvi Udayan — AI Engineer",
+    title: "Yashasvi Udayan — AI Systems Architect",
     description:
-      "AI Engineer building autonomous systems, local LLM pipelines, and developer tools.",
+      "Building AI systems that ship — cloud LLM pipelines, autonomous agents, and developer tooling.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Yashasvi Udayan — AI Engineer Portfolio",
+        alt: "Yashasvi Udayan — AI Systems Architect",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yashasvi Udayan — AI Engineer",
+    creator: "@iamyashholiic",
+    title: "Yashasvi Udayan — AI Systems Architect",
     description:
-      "AI Engineer building autonomous systems, local LLM pipelines, and developer tools.",
+      "Building AI systems that ship — cloud LLM pipelines, autonomous agents, and developer tooling.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -83,6 +99,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ScrollProgress />
         {children}
       </body>
     </html>
