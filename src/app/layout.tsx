@@ -7,7 +7,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Yashasvi Udayan",
-  url: "https://my-portfolio-sooty-eta-58.vercel.app",
+  url: "https://yashasviudayan.vercel.app",
   jobTitle: "AI Systems Architect",
   email: "yashasviudayan@gmail.com",
   sameAs: [
@@ -30,7 +30,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://my-portfolio-sooty-eta-58.vercel.app"),
+  metadataBase: new URL("https://yashasviudayan.vercel.app"),
   title: {
     default: "Yashasvi Udayan — AI Systems Architect",
     template: "%s | Yashasvi Udayan",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://my-portfolio-sooty-eta-58.vercel.app",
+    url: "https://yashasviudayan.vercel.app",
     siteName: "Yashasvi Udayan",
     title: "Yashasvi Udayan — AI Systems Architect",
     description:
