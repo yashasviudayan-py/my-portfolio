@@ -5,7 +5,7 @@
     "description": "An AI agent that autonomously browses the web, synthesizes information, and produces structured research reports. Powered by Llama-3 via Ollama with a multi-step planning pipeline.",
     "tags": ["Llama-3", "Ollama", "LangChain", "Python"],
     "status": "Live",
-    "github": "https://github.com/yashasviudayan/autonomous-researcher",
+    "github": "https://github.com/yashasviudayan-py/autonomous-researcher",
     "demo": null
   },
   {
@@ -14,7 +14,7 @@
     "description": "Automated code review agent that analyzes pull requests, suggests improvements, detects potential bugs, and generates meaningful commit messages using local LLMs.",
     "tags": ["Local LLM", "Git", "Python", "FastAPI"],
     "status": "Live",
-    "github": "https://github.com/yashasviudayan/pr-agent",
+    "github": "https://github.com/yashasviudayan-py/pr-agent",
     "demo": null
   },
   {
@@ -23,7 +23,7 @@
     "description": "A persistent memory layer for AI assistants. Stores, retrieves, and compresses conversation context using vector embeddings to give LLMs long-term memory without token bloat.",
     "tags": ["Vector DB", "Embeddings", "RAG", "TypeScript"],
     "status": "In Progress",
-    "github": "https://github.com/yashasviudayan/context-core",
+    "github": "https://github.com/yashasviudayan-py/context-core",
     "demo": null
   },
   {
@@ -32,7 +32,7 @@
     "description": "A natural language interface to control and orchestrate multiple AI agents from a single terminal. Think tmux meets AI — dispatch tasks, monitor pipelines, and collect results.",
     "tags": ["Multi-Agent", "CLI", "Ollama", "Python"],
     "status": "In Progress",
-    "github": "https://github.com/yashasviudayan/the-orchestrator",
+    "github": "https://github.com/yashasviudayan-py/the-orchestrator",
     "demo": null
   }
 ]

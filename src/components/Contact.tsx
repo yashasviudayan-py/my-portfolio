@@ -150,7 +150,7 @@ export default function Contact() {
           className="flex items-center justify-center gap-6 mt-10"
         >
           <a
-            href="https://github.com/yashasviudayan"
+            href="https://github.com/yashasviudayan-py"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
