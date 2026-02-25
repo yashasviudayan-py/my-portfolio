@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yashasviudayan.vercel.app/sitemap.xml
