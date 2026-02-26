@@ -34,11 +34,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://yashasviudayan.vercel.app"),
   icons: {
     icon: [
-      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
     ],
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.ico",
   },
   title: {
     default: "Yashasvi Udayan — AI Systems Architect",
