@@ -31,6 +31,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yashasviudayan.vercel.app"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   title: {
     default: "Yashasvi Udayan — AI Systems Architect",
     template: "%s | Yashasvi Udayan",
