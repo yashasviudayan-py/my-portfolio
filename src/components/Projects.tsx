@@ -45,7 +45,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
       variants={card}
       className={`rounded-2xl p-6 flex flex-col gap-4 group relative overflow-hidden ${
         featured
-          ? 'border border-violet-500/20 bg-white/[0.04] backdrop-blur-sm'
+          ? 'border border-violet-500/20 bg-surface backdrop-blur-sm'
           : 'glass-card'
       }`}
       aria-label={project.title}
@@ -57,14 +57,14 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
 
       {/* Title + status */}
       <div className="flex items-start justify-between gap-3">
-        <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
+        <h3 className="text-foreground font-semibold text-base sm:text-lg leading-snug">
           {project.title}
         </h3>
         <span
           className={`shrink-0 inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border ${
             isBuilding
               ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
-              : 'border-white/10 bg-white/5 text-white/50'
+              : 'border-border-theme bg-surface text-foreground/50'
           }`}
         >
           {isBuilding && <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />}
@@ -73,7 +73,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
       </div>
 
       {/* Description */}
-      <p className="text-[#A1A1A1] text-sm leading-relaxed">
+      <p className="text-muted text-sm leading-relaxed">
         {project.description}
       </p>
 
@@ -86,8 +86,8 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
               <li key={h} className="flex items-start gap-2 text-xs">
                 <span className="mt-1.5 w-1 h-1 rounded-full bg-violet-400/60 flex-shrink-0" aria-hidden="true" />
                 <span>
-                  <span className="text-white/80 font-medium">{label}</span>
-                  {detail && <span className="text-[#A1A1A1]"> — {detail}</span>}
+                  <span className="text-foreground/80 font-medium">{label}</span>
+                  {detail && <span className="text-muted"> — {detail}</span>}
                 </span>
               </li>
             );
@@ -100,7 +100,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
         <div>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-1.5 text-xs text-[#A1A1A1] hover:text-white transition-colors duration-200 focus:outline-none"
+            className="flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors duration-200 focus:outline-none"
             aria-expanded={open}
           >
             <svg
@@ -126,7 +126,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <pre className="mt-3 p-4 rounded-xl bg-white/3 border border-white/8 text-[11px] text-white/60 font-mono leading-relaxed overflow-x-auto whitespace-pre">
+                <pre className="mt-3 p-4 rounded-xl bg-surface border border-border-theme text-[11px] text-foreground/60 font-mono leading-relaxed overflow-x-auto whitespace-pre">
                   {diagram}
                 </pre>
               </motion.div>
@@ -140,7 +140,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/8 text-white/60 font-mono"
+            className="text-xs px-2.5 py-1 rounded-md bg-surface border border-border-theme text-foreground/60 font-mono"
           >
             {tag}
           </span>
@@ -149,13 +149,13 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
 
       {/* Links */}
       {(project.github || project.demo) && (
-      <div className="flex items-center gap-3 pt-1 border-t border-white/5">
+      <div className="flex items-center gap-3 pt-1 border-t border-border-theme">
         {project.github && (
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-[#A1A1A1] hover:text-white transition-colors duration-200"
+            className="flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors duration-200"
             aria-label={`View ${project.title} on GitHub`}
           >
             <GithubIcon />
@@ -167,7 +167,7 @@ function ProjectCard({ project, featured }: { project: typeof projects[number]; 
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-[#A1A1A1] hover:text-white transition-colors duration-200"
+            className="flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors duration-200"
             aria-label={`View ${project.title} live demo`}
           >
             <ExternalLinkIcon />
@@ -193,11 +193,11 @@ export default function Projects() {
           transition={{ duration: 0.6, ease }}
           className="mb-14"
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-3">Work</p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <p className="text-xs uppercase tracking-widest text-muted mb-3">Work</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             AI Projects
           </h2>
-          <p className="mt-3 text-[#A1A1A1] max-w-xl">
+          <p className="mt-3 text-muted max-w-xl">
             Production-grade systems built with local LLMs, autonomous agents, and real-world constraints.
           </p>
         </motion.div>

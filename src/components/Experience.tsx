@@ -42,8 +42,8 @@ export default function Experience() {
           transition={{ duration: 0.6, ease }}
           className="mb-14"
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-3">Work</p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <p className="text-xs uppercase tracking-widest text-muted mb-3">Work</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             Experience
           </h2>
         </motion.div>
@@ -58,21 +58,21 @@ export default function Experience() {
         >
           {/* Role header */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
-            <h3 className="text-white font-semibold text-lg leading-snug">
+            <h3 className="text-foreground font-semibold text-lg leading-snug">
               Independent AI Systems Developer
             </h3>
-            <span className="text-[#A1A1A1] text-sm font-mono whitespace-nowrap">
+            <span className="text-muted text-sm font-mono whitespace-nowrap">
               Jan 2026 – Present
             </span>
           </div>
-          <p className="text-[#A1A1A1] text-sm mb-6">Self-Directed · Lucknow, India</p>
+          <p className="text-muted text-sm mb-6">Self-Directed · Lucknow, India</p>
 
           {/* Bullet points */}
           <ul className="space-y-4">
             {bullets.map((point, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0" aria-hidden="true" />
-                <p className="text-[#A1A1A1] text-sm leading-relaxed">{point}</p>
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-foreground/30 flex-shrink-0" aria-hidden="true" />
+                <p className="text-muted text-sm leading-relaxed">{point}</p>
               </li>
             ))}
           </ul>
@@ -85,18 +85,18 @@ export default function Experience() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease, delay: 0.2 }}
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-8">Technical Skills</p>
+          <p className="text-xs uppercase tracking-widest text-muted mb-8">Technical Skills</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {skillGroups.map((group) => (
               <div key={group.category}>
-                <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-3">
+                <p className="text-xs uppercase tracking-widest text-muted mb-3">
                   {group.category}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="text-xs px-3 py-1.5 rounded-lg border border-white/8 bg-white/3 text-white/70 font-mono hover:border-white/20 hover:text-white transition-colors duration-200"
+                      className="text-xs px-3 py-1.5 rounded-lg border border-border-theme bg-surface text-foreground/70 font-mono hover:border-border-theme-hover hover:text-foreground transition-colors duration-200"
                     >
                       {item}
                     </span>

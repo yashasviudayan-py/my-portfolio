@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -48,7 +49,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'backdrop-blur-xl border-b border-white/6 bg-black/60' : 'bg-transparent'
+        scrolled ? 'backdrop-blur-xl border-b border-border-theme bg-overlay' : 'bg-transparent'
       }`}
       role="banner"
     >
@@ -59,10 +60,10 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 rounded"
+          className="text-foreground font-bold text-lg tracking-tight hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 rounded"
           aria-label="Yashasvi Udayan — Home"
         >
-          YU<span className="text-white">.</span>
+          YU<span className="text-foreground">.</span>
         </a>
 
         {/* Desktop links */}
@@ -74,10 +75,10 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={href}
-                  className={`relative px-3.5 py-2 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 ${
+                  className={`relative px-3.5 py-2 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 ${
                     isActive
-                      ? 'text-white'
-                      : 'text-[#A1A1A1] hover:text-white hover:bg-white/5'
+                      ? 'text-foreground'
+                      : 'text-muted hover:text-foreground hover:bg-surface'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -85,7 +86,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white"
+                      className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-foreground"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       aria-hidden="true"
                     />
@@ -97,10 +98,10 @@ export default function Navbar() {
           <li>
             <a
               href="/hobbies"
-              className={`relative px-3.5 py-2 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 ${
                 pathname === '/hobbies'
-                  ? 'text-white'
-                  : 'text-[#A1A1A1] hover:text-white hover:bg-white/5'
+                  ? 'text-foreground'
+                  : 'text-muted hover:text-foreground hover:bg-surface'
               }`}
               aria-current={pathname === '/hobbies' ? 'page' : undefined}
             >
@@ -108,7 +109,7 @@ export default function Navbar() {
               {pathname === '/hobbies' && (
                 <motion.span
                   layoutId="nav-indicator"
-                  className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white"
+                  className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-foreground"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   aria-hidden="true"
                 />
@@ -117,13 +118,14 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Right side: resume + mobile toggle */}
+        {/* Right side: theme toggle + resume + mobile toggle */}
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-white/15 text-sm text-white hover:bg-white/5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/30"
+            className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-border-theme-hover text-sm text-foreground hover:bg-surface transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30"
             aria-label="Download resume PDF"
           >
             Resume
@@ -134,7 +136,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg text-[#A1A1A1] hover:text-white hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/30"
+            className="md:hidden p-2 rounded-lg text-muted hover:text-foreground hover:bg-surface transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30"
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -158,7 +160,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden border-t border-white/6 bg-black/80 backdrop-blur-xl overflow-hidden"
+            className="md:hidden border-t border-border-theme bg-overlay backdrop-blur-xl overflow-hidden"
             role="navigation"
             aria-label="Mobile navigation"
           >
@@ -171,10 +173,10 @@ export default function Navbar() {
                     <a
                       href={href}
                       onClick={() => setMobileOpen(false)}
-                      className={`block px-3 py-2.5 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 ${
+                      className={`block px-3 py-2.5 rounded-lg text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 ${
                         isActive
-                          ? 'text-white bg-white/5'
-                          : 'text-[#A1A1A1] hover:text-white hover:bg-white/5'
+                          ? 'text-foreground bg-surface'
+                          : 'text-muted hover:text-foreground hover:bg-surface'
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
@@ -189,8 +191,8 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={`block px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
                     pathname === '/hobbies'
-                      ? 'text-white bg-white/5'
-                      : 'text-[#A1A1A1] hover:text-white hover:bg-white/5'
+                      ? 'text-foreground bg-surface'
+                      : 'text-muted hover:text-foreground hover:bg-surface'
                   }`}
                 >
                   Hobbies
@@ -201,7 +203,7 @@ export default function Navbar() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block px-3 py-2.5 rounded-lg text-sm text-[#A1A1A1] hover:text-white hover:bg-white/5 transition-all duration-200"
+                  className="block px-3 py-2.5 rounded-lg text-sm text-muted hover:text-foreground hover:bg-surface transition-all duration-200"
                   aria-label="Download resume PDF"
                 >
                   Resume ↓

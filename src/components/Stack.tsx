@@ -47,11 +47,11 @@ export default function Stack() {
           transition={{ duration: 0.6, ease }}
           className="mb-14"
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-3">Environment</p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <p className="text-xs uppercase tracking-widest text-muted mb-3">Environment</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             Dev Stack
           </h2>
-          <p className="mt-3 text-[#A1A1A1] max-w-xl">
+          <p className="mt-3 text-muted max-w-xl">
             Hardware and tooling that power day-to-day AI development and experimentation.
           </p>
         </motion.div>
@@ -82,11 +82,11 @@ export default function Stack() {
                   {spec.icon}
                 </span>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-1">
+                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
                     {spec.label}
                   </p>
-                  <p className="text-white font-semibold font-mono">{spec.value}</p>
-                  <p className="text-xs text-[#A1A1A1] font-mono mt-0.5">{spec.detail}</p>
+                  <p className="text-foreground font-semibold font-mono">{spec.value}</p>
+                  <p className="text-xs text-muted font-mono mt-0.5">{spec.detail}</p>
                 </div>
               </div>
             </motion.div>
@@ -100,15 +100,15 @@ export default function Stack() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease, delay: 0.2 }}
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-5">Daily Tools</p>
+          <p className="text-xs uppercase tracking-widest text-muted mb-5">Daily Tools</p>
           <div className="flex flex-wrap gap-3">
             {tools.map((tool) => (
               <div
                 key={tool.name}
                 className="glass-card rounded-xl px-4 py-2.5 flex items-center gap-2.5"
               >
-                <span className="text-white font-medium text-sm">{tool.name}</span>
-                <span className="text-[#A1A1A1] text-xs">{tool.role}</span>
+                <span className="text-foreground font-medium text-sm">{tool.name}</span>
+                <span className="text-muted text-xs">{tool.role}</span>
               </div>
             ))}
           </div>

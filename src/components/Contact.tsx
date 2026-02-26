@@ -63,11 +63,11 @@ export default function Contact() {
           transition={{ duration: 0.6, ease }}
           className="text-center mb-12"
         >
-          <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-3">Contact</p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+          <p className="text-xs uppercase tracking-widest text-muted mb-3">Contact</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
             Let&apos;s build something.
           </h2>
-          <p className="text-[#A1A1A1]">
+          <p className="text-muted">
             Open to AI engineering roles, freelance projects, and interesting collaborations.
             I respond within 24 hours.
           </p>
@@ -84,7 +84,7 @@ export default function Contact() {
             {/* Name + Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-xs uppercase tracking-widest text-[#A1A1A1] mb-2">
+                <label htmlFor="name" className="block text-xs uppercase tracking-widest text-muted mb-2">
                   Name
                 </label>
                 <input
@@ -93,11 +93,11 @@ export default function Contact() {
                   type="text"
                   required
                   placeholder="Your name"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-colors duration-200"
+                  className="w-full bg-surface border border-border-theme rounded-lg px-4 py-3 text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-surface-hover transition-colors duration-200"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs uppercase tracking-widest text-[#A1A1A1] mb-2">
+                <label htmlFor="email" className="block text-xs uppercase tracking-widest text-muted mb-2">
                   Email
                 </label>
                 <input
@@ -106,14 +106,14 @@ export default function Contact() {
                   type="email"
                   required
                   placeholder="you@example.com"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-colors duration-200"
+                  className="w-full bg-surface border border-border-theme rounded-lg px-4 py-3 text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-surface-hover transition-colors duration-200"
                 />
               </div>
             </div>
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-xs uppercase tracking-widest text-[#A1A1A1] mb-2">
+              <label htmlFor="message" className="block text-xs uppercase tracking-widest text-muted mb-2">
                 Message
               </label>
               <textarea
@@ -122,7 +122,7 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project or what you're looking to build..."
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-colors duration-200 resize-none"
+                className="w-full bg-surface border border-border-theme rounded-lg px-4 py-3 text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-indigo-500/60 focus:bg-surface-hover transition-colors duration-200 resize-none"
               />
             </div>
 
@@ -130,7 +130,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={formState === 'sending'}
-              className="w-full py-3.5 rounded-lg bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full py-3.5 rounded-lg bg-cta-bg text-cta-fg font-semibold text-sm hover:opacity-90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-foreground/50"
             >
               {formState === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
@@ -155,13 +155,13 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center justify-center gap-6 mt-10"
+          className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-4 sm:gap-6 mt-10"
         >
           <a
             href="https://github.com/yashasviudayan-py"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
+            className="flex items-center justify-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200"
             aria-label="GitHub profile"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
@@ -169,12 +169,11 @@ export default function Contact() {
             </svg>
             GitHub
           </a>
-          <span className="text-white/10">·</span>
           <a
             href="https://www.linkedin.com/in/yashasvi-udayan/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
+            className="flex items-center justify-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200"
             aria-label="LinkedIn profile"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
@@ -182,10 +181,9 @@ export default function Contact() {
             </svg>
             LinkedIn
           </a>
-          <span className="text-white/10">·</span>
           <button
             onClick={copyEmail}
-            className="relative flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200 focus:outline-none"
+            className="relative flex items-center justify-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200 focus:outline-none"
             aria-label="Copy email address"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -193,17 +191,16 @@ export default function Contact() {
             </svg>
             {emailCopied ? 'Copied!' : 'Email'}
             {emailCopied && (
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-white text-black font-medium px-2 py-1 rounded-md whitespace-nowrap pointer-events-none">
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-cta-bg text-cta-fg font-medium px-2 py-1 rounded-md whitespace-nowrap pointer-events-none">
                 yashasviudayan@gmail.com
               </span>
             )}
           </button>
-          <span className="text-white/10">·</span>
           <a
             href="https://x.com/iamyashholiic"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#A1A1A1] hover:text-white transition-colors duration-200"
+            className="flex items-center justify-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200"
             aria-label="X (Twitter) profile"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
