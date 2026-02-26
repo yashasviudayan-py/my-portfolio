@@ -35,27 +35,65 @@ const ExternalLinkIcon = () => (
   </svg>
 );
 
-function ProjectCard({ project }: { project: typeof projects[number] }) {
+function ProjectCard({ project, featured }: { project: typeof projects[number]; featured?: boolean }) {
   const [open, setOpen] = useState(false);
   const diagram = architectureDiagrams[project.id];
+  const isBuilding = project.status === 'In Progress';
 
   return (
     <motion.article
       variants={card}
-      className="glass-card rounded-2xl p-6 flex flex-col gap-4 group"
+      className={`rounded-2xl p-6 flex flex-col gap-4 group relative overflow-hidden ${
+        featured
+          ? 'border border-violet-500/20 bg-white/[0.04] backdrop-blur-sm'
+          : 'glass-card'
+      }`}
       aria-label={project.title}
     >
-      {/* Title */}
-      <div className="flex items-start gap-3">
-        <h3 className="text-white font-semibold text-base sm:text-lg leading-snug group-hover:text-white transition-colors">
+      {/* Featured top accent */}
+      {featured && (
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
+      )}
+
+      {/* Title + status */}
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
           {project.title}
         </h3>
+        <span
+          className={`shrink-0 inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border ${
+            isBuilding
+              ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+              : 'border-white/10 bg-white/5 text-white/50'
+          }`}
+        >
+          {isBuilding && <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />}
+          {project.status}
+        </span>
       </div>
 
       {/* Description */}
-      <p className="text-[#A1A1A1] text-sm leading-relaxed flex-1">
+      <p className="text-[#A1A1A1] text-sm leading-relaxed">
         {project.description}
       </p>
+
+      {/* Highlights chips (Sentinel-Shield) */}
+      {'highlights' in project && Array.isArray(project.highlights) && (
+        <ul className="flex flex-col gap-1.5">
+          {(project.highlights as string[]).map((h) => {
+            const [label, detail] = h.split(' — ');
+            return (
+              <li key={h} className="flex items-start gap-2 text-xs">
+                <span className="mt-1.5 w-1 h-1 rounded-full bg-violet-400/60 flex-shrink-0" aria-hidden="true" />
+                <span>
+                  <span className="text-white/80 font-medium">{label}</span>
+                  {detail && <span className="text-[#A1A1A1]"> — {detail}</span>}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
 
       {/* Architecture toggle */}
       {diagram && (
@@ -110,6 +148,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
       </div>
 
       {/* Links */}
+      {(project.github || project.demo) && (
       <div className="flex items-center gap-3 pt-1 border-t border-white/5">
         {project.github && (
           <a
@@ -136,6 +175,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
           </a>
         )}
       </div>
+      )}
     </motion.article>
   );
 }
@@ -171,7 +211,9 @@ export default function Projects() {
           viewport={{ once: true, margin: '-60px' }}
         >
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <div key={project.id} className={project.id === 5 ? 'md:col-span-2' : ''}>
+              <ProjectCard project={project} featured={project.id === 5} />
+            </div>
           ))}
         </motion.div>
       </div>

@@ -5,27 +5,27 @@ import { motion } from 'framer-motion';
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const bullets = [
-  'Designed and shipped four end-to-end AI infrastructure projects spanning multi-agent orchestration, RAG memory engines, autonomous DevOps, and concurrent web research — all on local compute.',
-  'Mastered Apple Silicon (Metal) GPU acceleration to run 8B parameter LLMs locally, achieving $0 cloud API cost while maintaining production-grade performance.',
-  'Established CI/CD pipelines via GitHub Actions to automate test suites and publish multi-platform Docker images; applied security-first credential redaction across all vector ingestion workflows.',
+  'Designed and shipped five production AI systems: The Orchestrator (multi-agent natural language CLI), PR Agent (automated code review via local LLMs), Context Core (persistent vector memory layer), The Autonomous Researcher (self-directed web research pipeline), and Sentinel-Shield (enterprise AI security gateway) — all built on local compute or open-weight models.',
+  'Built Sentinel-Shield to solve the enterprise Trust Gap: a security gateway with real-time data leak interception, gateway-level prompt injection defense, per-user budget enforcement, and permanent compliance audit trails targeting Finance and Healthcare.',
+  'Mastered Apple Silicon (Metal) GPU acceleration to run 8B parameter LLMs locally at $0 cloud cost; established CI/CD via GitHub Actions with multi-platform Docker image publishing and security-first credential redaction across all vector ingestion workflows.',
 ];
 
 const skillGroups = [
   {
     category: 'AI & Machine Learning',
-    items: ['LangGraph', 'RAG', 'Vector Databases (ChromaDB)', 'Agentic Orchestration', 'Local LLMs (Ollama, Llama-3-8B, Nomic)', 'Prompt Engineering'],
+    items: ['LangGraph', 'RAG', 'Vector Databases (ChromaDB)', 'Agentic Orchestration', 'Local LLMs (Ollama, Llama-3-8B, Nomic)', 'Prompt Engineering', 'Multi-Agent Systems'],
+  },
+  {
+    category: 'Security & Governance',
+    items: ['AI Security Gateways', 'Prompt Injection Defense', 'Data Leak Prevention', 'Compliance Audit Systems', 'Budget Governance'],
   },
   {
     category: 'Backend & Infrastructure',
     items: ['Python', 'FastAPI', 'Redis', 'Docker (Multi-platform)', 'GitHub Actions (CI/CD)', 'Pydantic v2'],
   },
   {
-    category: 'Hardware & Optimization',
-    items: ['Apple Silicon (Metal) acceleration', 'Local inference optimization (24 GB RAM / 16-core GPU tuning)'],
-  },
-  {
-    category: 'Tools',
-    items: ['Git', 'GitHub CLI', 'Python Watchdog', 'SQLite', 'Pytest'],
+    category: 'Hardware & Tools',
+    items: ['Apple Silicon (Metal) acceleration', 'Local inference optimization', 'Git', 'GitHub CLI', 'SQLite', 'Pytest'],
   },
 ];
 

@@ -91,6 +91,7 @@ export const watched2026: WatchedItem[] = [
   { title: 'Run Away', type: 'TV Mini' },
   { title: 'Weapons', type: 'Film' },
   { title: 'The Wire', type: 'TV Show' },
+  { title: 'Suits', type: 'TV Show' },
 ];
 
 export const musicReplay = [

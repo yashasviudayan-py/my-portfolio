@@ -91,11 +91,24 @@ export default function Hero() {
           </p>
         </motion.div>
 
+        {/* Tagline */}
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          custom={0.2}
+          variants={fadeUp}
+          className="max-w-2xl text-[#A1A1A1] text-base sm:text-lg leading-relaxed"
+        >
+          I design and ship production-grade AI systems — multi-agent intelligence
+          architectures, LLM orchestration engines, and autonomous DevOps pipelines.
+          Built on OpenAI, Anthropic, and open-weight models. Zero to deployed, at velocity.
+        </motion.p>
+
         {/* Social links */}
         <motion.div
           initial="hidden"
           animate="visible"
-          custom={0.2}
+          custom={0.3}
           variants={fadeUp}
           className="flex items-center gap-5"
         >
@@ -122,24 +135,11 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Tagline */}
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          custom={0.3}
-          variants={fadeUp}
-          className="max-w-2xl text-[#A1A1A1] text-base sm:text-lg leading-relaxed"
-        >
-          I turn AI research into production systems — autonomous agents, LLM pipelines,
-          and developer tools built across OpenAI, Anthropic, and open-weight models.
-          From prototype to deployed, fast.
-        </motion.p>
-
         {/* CTA buttons */}
         <motion.div
           initial="hidden"
           animate="visible"
-          custom={0.4}
+          custom={0.45}
           variants={fadeUp}
           className="flex flex-wrap items-center justify-center gap-4"
         >

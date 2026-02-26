@@ -118,7 +118,7 @@ export default function HobbiesPage() {
               Hobbies
             </h1>
             <p className="text-[#A1A1A1] max-w-xl text-lg">
-              Films, music, and the occasional book. The things that keep me human.
+              Films, music, and the books that matter. The things that keep me human.
             </p>
           </motion.div>
 
@@ -333,16 +333,49 @@ export default function HobbiesPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-1">On the Radar</p>
+                      <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-1">Sitting on My Desk</p>
                       <p className="text-white font-semibold text-lg leading-snug">A Song of Ice and Fire</p>
                       <p className="text-[#A1A1A1] text-sm mt-0.5">George R.R. Martin · 7 books</p>
                       <p className="text-white/30 text-xs mt-3 italic leading-relaxed">
-                        Sitting on my desk as we speak. The industry moves fast and life gets busy — but these books aren&apos;t going anywhere. I&apos;ve watched the show twice. I know how it ends. I&apos;m still reading every single one.
+                        The industry moves fast and life gets busy — but these books aren&apos;t going anywhere. I&apos;ve watched the show twice. I know how it ends. I&apos;m still reading every single one.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* Bookshelf — Before I Die */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease, delay: 0.1 }}
+                className="mt-8"
+              >
+                <p className="text-xs uppercase tracking-widest text-[#A1A1A1] mb-1">The List</p>
+                <h3 className="text-lg font-bold text-white mb-5">Books I Will Read Before I Die</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {[
+                    { title: 'War and Peace', author: 'Leo Tolstoy' },
+                    { title: 'Crime and Punishment', author: 'Fyodor Dostoyevsky' },
+                    { title: 'Demons', author: 'Fyodor Dostoyevsky' },
+                    { title: 'The Idiot', author: 'Fyodor Dostoyevsky' },
+                  ].map((book, idx) => (
+                    <div
+                      key={book.title}
+                      className="flex items-start gap-4 px-5 py-4 rounded-xl border border-white/5 bg-white/2 hover:bg-white/4 hover:border-white/10 transition-all duration-200 group"
+                    >
+                      <span className="text-[#A1A1A1] text-sm tabular-nums mt-0.5 w-6 flex-shrink-0 group-hover:text-white/60 transition-colors">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white text-sm font-medium leading-snug">{book.title}</p>
+                        <p className="text-[#A1A1A1] text-xs mt-0.5">{book.author}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </section>
 

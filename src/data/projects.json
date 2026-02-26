@@ -1,10 +1,25 @@
 [
   {
+    "id": 5,
+    "title": "Sentinel-Shield",
+    "description": "An AI security gateway that closes the enterprise Trust Gap — letting companies run the world's most powerful models inside a secure sandbox, without risking data leaks or compliance violations.",
+    "highlights": [
+      "Leak Prevention — intercepts secrets before they reach public APIs",
+      "Audit Trail — permanent searchable log for Finance & Healthcare compliance",
+      "Cost Governance — hard budget limits per user and per project",
+      "Prompt Injection Guard — gateway-level protection for internal tools"
+    ],
+    "tags": ["Security", "Enterprise AI", "Compliance", "Gateway", "Python"],
+    "status": "In Progress",
+    "github": null,
+    "demo": null
+  },
+  {
     "id": 1,
     "title": "The Orchestrator",
     "description": "A natural language interface to control and orchestrate multiple AI agents from a single terminal. Think tmux meets AI — dispatch tasks, monitor pipelines, and collect results.",
     "tags": ["Multi-Agent", "CLI", "Ollama", "Python"],
-    "status": "In Progress",
+    "status": "Live",
     "github": "https://github.com/yashasviudayan-py/the-orchestrator",
     "demo": null
   },
@@ -22,7 +37,7 @@
     "title": "Context Core",
     "description": "A persistent memory layer for AI assistants. Stores, retrieves, and compresses conversation context using vector embeddings to give LLMs long-term memory without token bloat.",
     "tags": ["Vector DB", "Embeddings", "RAG", "TypeScript"],
-    "status": "In Progress",
+    "status": "Live",
     "github": "https://github.com/yashasviudayan-py/context-core",
     "demo": null
   },
