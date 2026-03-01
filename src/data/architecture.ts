@@ -65,6 +65,46 @@ export const architectureDiagrams: Record<number, string> = {
     Zsh History
     SQLite State`,
 
+  // Swarm-Tune
+  6: `Node A (Docker)                    Node B (Docker)
+  Train on local shard               Train on local shard
+       |                                   |
+       v                                   v
+  Extract ∇W manually               Extract ∇W manually
+  (no DDP — raw tensor)             (no DDP — raw tensor)
+       |                                   |
+       +──────────→ libp2p mesh ←──────────+
+                        |
+              Gradient Aggregator
+              ∇W_avg = (∇W_A + ∇W_B + ...) / N
+              async timeout → straggler skip
+                        |
+              All nodes update:
+              W = W − lr × ∇W_avg
+                        |
+                        v
+              Node C (Docker)   Node D (Docker)
+              (same cycle repeats across 4 containers)`,
+
+  // Sentinel-Shield
+  5: `Your App ──→ Sentinel-Shield ──→ OpenAI / Anthropic / Ollama
+                       |
+                       ├── Strip PII & secrets from prompts
+                       ├── Block jailbreak / prompt-injection attempts
+                       ├── Scan LLM responses for leaked data
+                       ├── Enforce rate limits (per-user / per-project)
+                       ├── Persist full audit trail (SQLite)
+                       └── Emit Prometheus metrics + webhook alerts
+
+  FastAPI Proxy (drop-in, Docker Compose)
+       |
+       ├── PII Scanner  ──→ regex + spaCy NER
+       ├── Injection Guard ──→ pattern + classifier
+       ├── Response Filter ──→ mirrors inbound rules
+       ├── Rate Limiter ──→ token-bucket per key
+       ├── Audit Logger ──→ SQLite (append-only)
+       └── Metrics ──→ /metrics (Prometheus) + POST webhooks`,
+
   // The Autonomous Researcher
   4: `Browser (http://localhost:8000)
     |

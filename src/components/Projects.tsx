@@ -211,8 +211,8 @@ export default function Projects() {
           viewport={{ once: true, margin: '-60px' }}
         >
           {projects.map((project) => (
-            <div key={project.id} className={project.id === 5 ? 'md:col-span-2' : ''}>
-              <ProjectCard project={project} featured={project.id === 5} />
+            <div key={project.id} className={project.id === 6 ? 'md:col-span-2' : ''}>
+              <ProjectCard project={project} featured={project.id === 6} />
             </div>
           ))}
         </motion.div>

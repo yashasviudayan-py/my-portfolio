@@ -4,6 +4,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Stack from "@/components/Stack";
+import Curriculum from "@/components/Curriculum";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
           <Projects />
           <About />
           <Stack />
+          <Curriculum />
           <Contact />
         </main>
         <Footer />

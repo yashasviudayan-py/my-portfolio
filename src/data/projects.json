@@ -1,17 +1,26 @@
 [
   {
-    "id": 5,
-    "title": "Sentinel-Shield",
-    "description": "An AI security gateway that closes the enterprise Trust Gap — letting companies run the world's most powerful models inside a secure sandbox, without risking data leaks or compliance violations.",
+    "id": 6,
+    "title": "Swarm-Tune",
+    "description": "A decentralized AI fine-tuning swarm — nodes discover each other over libp2p, exchange raw PyTorch gradients across the mesh, average them without any central server, and collectively fine-tune a model inside a Docker-simulated network on a single machine.",
     "highlights": [
-      "Leak Prevention — intercepts secrets before they reach public APIs",
-      "Audit Trail — permanent searchable log for Finance & Healthcare compliance",
-      "Cost Governance — hard budget limits per user and per project",
-      "Prompt Injection Guard — gateway-level protection for internal tools"
+      "Phase 1: Whisper Network — libp2p P2P node discovery & messaging, no central server",
+      "Phase 2: Gradient Math — manual PyTorch gradient extraction, bypassing DDP for network transit",
+      "Phase 3: Synchronisation — nodes exchange & average gradients across libp2p; straggler-problem handling",
+      "Phase 4: Docker Simulation — 4-container swarm on M4 Pro collectively fine-tuning a model"
     ],
-    "tags": ["Security", "Enterprise AI", "Compliance", "Gateway", "Python"],
+    "tags": ["libp2p", "PyTorch", "Distributed ML", "Docker", "P2P", "Python"],
     "status": "In Progress",
     "github": null,
+    "demo": null
+  },
+  {
+    "id": 5,
+    "title": "Sentinel-Shield",
+    "description": "An AI security gateway that sits between your app and OpenAI / Anthropic / Ollama — stripping PII, blocking prompt injections, scanning responses for leaks, enforcing rate limits, and emitting a full audit trail. Drop-in proxy, Docker-ready.",
+    "tags": ["Security", "AI Gateway", "Docker", "Prometheus", "Python", "SQLite"],
+    "status": "Live",
+    "github": "https://github.com/yashasviudayan-py/Sentinel-Shield",
     "demo": null
   },
   {
